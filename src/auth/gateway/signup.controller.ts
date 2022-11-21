@@ -31,11 +31,15 @@ export class SignUpController implements IController {
       if (!isEmailValid) {
         return badRequest(new InvalidParamError("email"));
       }
-      this.addAccountUsecase.add({
+      const account = this.addAccountUsecase.add({
         name,
         email,
         password,
       });
+      return {
+        statusCode: 200,
+        body: account,
+      };
     } catch (error) {
       return serverError();
     }
