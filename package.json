@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "repository": "git@github.com:SamuelHFalci/authenticator-nodejs.git",
   "author": "samuelhfalci <samuelhfalci@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.2.1"
+  }
 }
