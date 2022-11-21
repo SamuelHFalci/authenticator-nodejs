@@ -1,6 +1,8 @@
-import { InvalidParamError } from "../../@shared/errors/invalid-param-error";
-import { MissingParamError } from "../../@shared/errors/missing-param-error";
-import { ServerError } from "../../@shared/errors/server-error";
+import {
+  InvalidParamError,
+  MissingParamError,
+  ServerError,
+} from "../../@shared/errors";
 import { IEmailValidator } from "../domain/validators/email-validator";
 import { SignUpController } from "./signup.controller";
 

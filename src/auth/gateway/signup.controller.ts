@@ -1,5 +1,4 @@
-import { InvalidParamError } from "../../@shared/errors/invalid-param-error";
-import { MissingParamError } from "../../@shared/errors/missing-param-error";
+import { InvalidParamError, MissingParamError } from "../../@shared/errors";
 import { IController } from "../../@shared/gateway/controller.interface";
 import { IHttpRequest, IHttpResponse } from "../../@shared/gateway/http";
 import { badRequest, serverError } from "../../@shared/helpers/http-helper";
