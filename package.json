@@ -1,0 +1,7 @@
+{
+  "name": "authenticator-nodejs",
+  "version": "1.0.0",
+  "repository": "git@github.com:SamuelHFalci/authenticator-nodejs.git",
+  "author": "samuelhfalci <samuelhfalci@gmail.com>",
+  "license": "MIT"
+}
