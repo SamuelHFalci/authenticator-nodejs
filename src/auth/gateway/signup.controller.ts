@@ -10,7 +10,7 @@ export class SignUpController implements IController {
     private readonly emailValidator: IEmailValidator,
     private readonly addAccountUsecase: IAddAccountUsecase
   ) {}
-  handle(httpRequest: IHttpRequest): IHttpResponse {
+  async handle(httpRequest: IHttpRequest): Promise<IHttpResponse> {
     try {
       const requiredFileds = [
         "name",
@@ -31,7 +31,7 @@ export class SignUpController implements IController {
       if (!isEmailValid) {
         return badRequest(new InvalidParamError("email"));
       }
-      const account = this.addAccountUsecase.add({
+      const account = await this.addAccountUsecase.add({
         name,
         email,
         password,

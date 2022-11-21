@@ -6,5 +6,5 @@ export interface IAddAccountModel {
   password: string;
 }
 export interface IAddAccountUsecase {
-  add(account: IAddAccountModel): IAccountModel;
+  add(account: IAddAccountModel): Promise<IAccountModel>;
 }
