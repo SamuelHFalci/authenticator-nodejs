@@ -1,9 +1,10 @@
 import { MissingParamError } from "../../@shared/errors/missing-param-error";
-import { HttpRequest, HttpResponse } from "../../@shared/gateway/http";
+import { IController } from "../../@shared/gateway/controller.interface";
+import { IHttpRequest, IHttpResponse } from "../../@shared/gateway/http";
 import { badRequest } from "../../@shared/helpers/http-helper";
 
-export class SignUpController {
-  handle(httpRequest: HttpRequest): HttpResponse {
+export class SignUpController implements IController {
+  handle(httpRequest: IHttpRequest): IHttpResponse {
     const requiredFileds = [
       "name",
       "email",

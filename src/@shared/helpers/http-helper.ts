@@ -1,6 +1,6 @@
-import { HttpResponse } from "../gateway/http";
+import { IHttpResponse } from "../gateway/http";
 
-export const badRequest = (error: Error): HttpResponse => ({
+export const badRequest = (error: Error): IHttpResponse => ({
   statusCode: 400,
   body: error,
 });
