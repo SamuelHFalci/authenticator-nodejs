@@ -1,7 +1,7 @@
 import { InvalidParamError, MissingParamError } from "../../@shared/errors";
 import { IController } from "../../@shared/gateway/controller.interface";
 import { IHttpRequest, IHttpResponse } from "../../@shared/gateway/http";
-import { badRequest, serverError } from "../../@shared/helpers/http-helper";
+import { badRequest, ok, serverError } from "../../@shared/helpers/http-helper";
 import { IAddAccountUsecase } from "../domain/usecases/add-account.usecase.interface";
 import { IEmailValidator } from "../domain/validators/email-validator";
 
@@ -36,10 +36,7 @@ export class SignUpController implements IController {
         email,
         password,
       });
-      return {
-        statusCode: 200,
-        body: account,
-      };
+      return ok(account);
     } catch (error) {
       return serverError();
     }
