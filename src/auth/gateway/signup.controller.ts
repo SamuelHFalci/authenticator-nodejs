@@ -1,9 +1,8 @@
 import { InvalidParamError } from "../../@shared/errors/invalid-param-error";
 import { MissingParamError } from "../../@shared/errors/missing-param-error";
-import { ServerError } from "../../@shared/errors/server-error";
 import { IController } from "../../@shared/gateway/controller.interface";
 import { IHttpRequest, IHttpResponse } from "../../@shared/gateway/http";
-import { badRequest } from "../../@shared/helpers/http-helper";
+import { badRequest, serverError } from "../../@shared/helpers/http-helper";
 import { IEmailValidator } from "../domain/validators/email-validator";
 
 export class SignUpController implements IController {
@@ -26,10 +25,7 @@ export class SignUpController implements IController {
         return badRequest(new InvalidParamError("email"));
       }
     } catch (error) {
-      return {
-        statusCode: 500,
-        body: new ServerError(),
-      };
+      return serverError();
     }
   }
 }
