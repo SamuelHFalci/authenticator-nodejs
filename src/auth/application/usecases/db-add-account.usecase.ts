@@ -3,12 +3,19 @@ import { IAccountModel } from '../../domain/models/account'
 import {
   IAddAccountModel,
   IAddAccountUsecase
-} from '../../domain/usecases/add-account.usecase.interface'
+} from '../../domain/interfaces/add-account.usecase.interface'
+import { IAddAccountRepository } from '../../domain/interfaces/add-account.repository.interface'
 
 export default class DbAddAccountUsecase implements IAddAccountUsecase {
-  constructor(private readonly encrypter: IEncrypter) {}
+  constructor(
+    private readonly encrypter: IEncrypter,
+    private readonly addAccountRepository: IAddAccountRepository
+  ) {}
   async add(account: IAddAccountModel): Promise<IAccountModel> {
-    await this.encrypter.encrypt(account.password)
-    return new Promise((resolve) => resolve(null))
+    const hashedPassword = await this.encrypter.encrypt(account.password)
+    const newAccount = await this.addAccountRepository.add(
+      Object.assign({}, account, { password: hashedPassword })
+    )
+    return new Promise((resolve) => resolve(newAccount))
   }
 }
