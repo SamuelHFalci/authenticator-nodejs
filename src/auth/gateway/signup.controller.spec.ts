@@ -7,7 +7,7 @@ import { IAccountModel } from '../domain/models/account'
 import {
   IAddAccountModel,
   IAddAccountUsecase
-} from '../domain/usecases/add-account.usecase.interface'
+} from '../domain/interfaces/add-account.usecase.interface'
 import { IEmailValidator } from '../domain/validators/email-validator'
 import { SignUpController } from './signup.controller'
 
