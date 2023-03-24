@@ -1,13 +1,13 @@
 import {
-  InvalidParamError,
   MissingParamError,
+  InvalidParamError,
   ServerError
-} from '../../@shared/errors'
+} from '../application/errors'
 import { IAccountModel } from '../domain/models/account'
 import {
   IAddAccountModel,
   IAddAccountUsecase
-} from '../domain/interfaces/add-account.usecase.interface'
+} from '../domain/usecase/add-account.usecase.interface'
 import { IEmailValidator } from '../domain/validators/email-validator'
 import { SignUpController } from './signup.controller'
 

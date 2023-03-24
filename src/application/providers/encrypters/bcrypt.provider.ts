@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import { IEncrypter } from '../../domain/interfaces/encrypter.interface'
+import { IEncrypter } from '../../../domain/interfaces/encrypter.interface'
 export class BcryptProvider implements IEncrypter {
   constructor(private readonly salt: number = 12) {}
 

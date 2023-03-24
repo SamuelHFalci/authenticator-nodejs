@@ -1,9 +1,9 @@
-import { InvalidParamError, MissingParamError } from '../../@shared/errors'
-import { IController } from '../../@shared/gateway/controller.interface'
-import { IHttpRequest, IHttpResponse } from '../../@shared/gateway/http'
-import { badRequest, ok, serverError } from '../../@shared/helpers/http-helper'
-import { IAddAccountUsecase } from '../domain/interfaces/add-account.usecase.interface'
+import { IController } from '../domain/gateway/controller.interface'
+import { IHttpRequest, IHttpResponse } from '../domain/gateway/http'
+import { MissingParamError, InvalidParamError } from '../application/errors'
+import { IAddAccountUsecase } from '../domain/usecase/add-account.usecase.interface'
 import { IEmailValidator } from '../domain/validators/email-validator'
+import { badRequest, ok, serverError } from '../helpers/http-helper'
 
 export class SignUpController implements IController {
   constructor(

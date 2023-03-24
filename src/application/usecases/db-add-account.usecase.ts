@@ -3,8 +3,8 @@ import { IAccountModel } from '../../domain/models/account'
 import {
   IAddAccountModel,
   IAddAccountUsecase
-} from '../../domain/interfaces/add-account.usecase.interface'
-import { IAddAccountRepository } from '../../domain/interfaces/add-account.repository.interface'
+} from '../../domain/usecase/add-account.usecase.interface'
+import { IAddAccountRepository } from '../../domain/repository/add-account.repository.interface'
 
 export default class DbAddAccountUsecase implements IAddAccountUsecase {
   constructor(

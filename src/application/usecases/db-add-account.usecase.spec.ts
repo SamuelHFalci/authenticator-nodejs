@@ -1,8 +1,8 @@
 import { IEncrypter } from '../../domain/interfaces/encrypter.interface'
 import { IAccountModel } from '../../domain/models/account'
-import { IAddAccountModel } from '../../domain/interfaces/add-account.usecase.interface'
+import { IAddAccountModel } from '../../domain/usecase/add-account.usecase.interface'
 import DbAddAccountUsecase from './db-add-account.usecase'
-import { IAddAccountRepository } from '../../domain/interfaces/add-account.repository.interface'
+import { IAddAccountRepository } from '../../domain/repository/add-account.repository.interface'
 
 const makeEncrypter = (): IEncrypter => {
   class EncrypterStub implements IEncrypter {
